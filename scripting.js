@@ -45,3 +45,29 @@ submitButton.addEventListener("click", function () {
 
 // Initialize the first question
 displayQuestion();
+
+___________________________________________________________________________________________________
+
+
+// Convert JavaScript variables to JSON
+const dataToSend = {
+    variable1: "value1",
+    variable2: "value2",
+};
+
+// Send data to Python script using AJAX
+fetch('processInput.py', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataToSend),
+})
+.then(response => response.json())
+.then(data => {
+    // Handle the response from Python
+    console.log(data);
+})
+.catch(error => {
+    console.error('Error:', error);
+});

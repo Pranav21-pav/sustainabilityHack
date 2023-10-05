@@ -1,0 +1,40 @@
+import json
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/', methods=['POST'])
+def process_data():
+    data = request.get_json()
+    variable1 = data['variable1']
+    variable2 = data['variable2']
+
+    # Process the data
+    # ...
+
+    # Return a response (optional)
+    response_data = {"message": "Data received and processed successfully"}
+    return jsonify(response_data)
+
+if __name__ == '__main__':
+    app.run()
+____________________________________________________________________________________
+
+#Start writing if else statements from here
+ans1 = ''
+ans2 = ''
+ans3 = ''
+ans4 = ''
+ans5 = ''
+#question 1
+
+total_score = 0
+if ans1 == 'A':
+    total_score += 4
+elif ans1 == 'B':
+    total_score += 3
+elif ans1 == 'C':
+    total_score += 2
+elif ans1 == 'D':
+    total_score += 1
+    
