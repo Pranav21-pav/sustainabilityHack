@@ -14,16 +14,25 @@ const userResponseElement = document.getElementById("user-response");
 const submitButton = document.getElementById("submit-button");
 
 // Function to display the current question
-function displayQuestion() {
-    if (currentQuestionIndex < questions.length) {
-        questionElement.textContent = questions[currentQuestionIndex];
-        userResponseElement.value = ""; // Clear the input field
-    } else {
-        questionContainer.style.display = "none"; // Hide the question container when all questions are answered
-        displayResults(); // Call a function to display results or provide feedback
+// Function to display questions in HTML
+function displayQuestions() {
+    const questionsContainer = document.getElementById("questions-container");
+
+    // Loop through the array and create HTML elements for each question
+    for (let i = 0; i < questions.length; i++) {
+        const question = questions[i];
+
+        // Create a <p> element for the question
+        const questionElement = document.createElement("p");
+        questionElement.textContent = `Question ${i + 1}: ${question}`;
+
+        // Append the question element to the questions container
+        questionsContainer.appendChild(questionElement);
     }
 }
 
+// Call the displayQuestions function when the page loads
+window.addEventListener("load", displayQuestions);
 // Event listener for the submit button
 submitButton.addEventListener("click", function () {
     const userResponse = userResponseElement.value;
