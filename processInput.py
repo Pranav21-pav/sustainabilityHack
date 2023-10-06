@@ -16,7 +16,7 @@ def process_data():
     response_data = {"message": "Data received and processed successfully"}
     return jsonify(response_data)
 
-if __name__ == '__main__':
+if __name__ == '__scripting__':
     app.run()
 __________________________
 __________________________________________________________
