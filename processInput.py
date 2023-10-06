@@ -40,5 +40,35 @@ elif ans1 == 'C':
 elif ans1 == 'D':
     total_score += 1
 
-#hi
+if ans2 == 'A':
+    total_score += 3
+elif ans2 == 'B':
+    total_score += 2
+elif ans2 == 'C':
+    total_score += 1
+
+if ans3 == 'A':
+    total_score += 3
+elif ans3 == 'B':
+    total_score += 2
+elif ans3 == 'C':
+    total_score += 1
+
+if ans4 == 'A':
+    total_score += 4
+elif ans4 == 'B':
+    total_score += 3
+elif ans4 == 'C':
+    total_score += 2
+elif ans4 == 'D':
+    total_score += 1
+
+if ans5 == 'A':
+    total_score += 4
+elif ans5 == 'B':
+    total_score += 3
+elif ans5 == 'C':
+    total_score += 2
+elif ans5 == 'D':
+    total_score += 1
     
