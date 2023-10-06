@@ -19,7 +19,7 @@ body {
 }
 
 h1 {
-    font-size: 32px; /* Increase the font size for the title */
+    font-size: 32px;
     color: #333;
 }
 
@@ -28,10 +28,10 @@ button {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 5px; /* Rounded corners */
     cursor: pointer;
     font-size: 16px;
-    margin-top: 20px; /* Increase the top margin to separate from the title */
+    margin-top: 20px;
     transition: background-color 0.3s;
 }
 
@@ -42,7 +42,7 @@ button:hover {
 .form-container {
     background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px; /* Rounded corners */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     width: 300px;
     margin: 10px;
@@ -68,7 +68,7 @@ input[type="password"] {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 3px; /* Rounded corners */
 }
 
 button[type="submit"] {
@@ -76,7 +76,7 @@ button[type="submit"] {
     color: #fff;
     border: none;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 5px; /* Rounded corners */
     cursor: pointer;
     transition: background-color 0.3s;
 }
