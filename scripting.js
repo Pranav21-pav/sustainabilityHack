@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     const toggleButton = document.getElementById("toggle-button");
-    const loginForm = document.getElementById("login-form");
-    const signupForm = document.getElementById("signup-form");
+    const loginContainer = document.getElementById("login-container");
+    const signupContainer = document.getElementById("signup-container");
 
     toggleButton.addEventListener("click", function() {
-        if (loginForm.style.display === "none") {
-            loginForm.style.display = "block";
-            signupForm.style.display = "none";
+        if (loginContainer.style.display === "none") {
+            loginContainer.style.display = "block";
+            signupContainer.style.display = "none";
         } else {
-            loginForm.style.display = "none";
-            signupForm.style.display = "block";
+            loginContainer.style.display = "none";
+            signupContainer.style.display = "block";
         }
     });
 });
