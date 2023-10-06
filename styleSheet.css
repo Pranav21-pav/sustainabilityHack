@@ -68,7 +68,7 @@ input[type="password"] {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 3px; /* Rounded corners */
+    border-radius: 5px; /* Rounded corners */
 }
 
 button[type="submit"] {
@@ -85,8 +85,6 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-
-
 /* Basic styling for the calculator container */
 #question-container {
     text-align: center;
@@ -100,7 +98,7 @@ button[type="submit"]:hover {
 }
 
 /* Styling for the calculator title */
-h1 {
+#question-container h1 {
     font-size: 24px;
     color: #333;
 }
@@ -140,4 +138,3 @@ h1 {
 }
 
 /* Additional styles can be added as needed for your specific design */
-
