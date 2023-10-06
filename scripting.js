@@ -1,4 +1,22 @@
-    const questions = [
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.getElementById("toggle-button");
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
+
+    toggleButton.addEventListener("click", function() {
+        if (loginForm.style.display === "none") {
+            loginForm.style.display = "block";
+            signupForm.style.display = "none";
+        } else {
+            loginForm.style.display = "none";
+            signupForm.style.display = "block";
+        }
+    });
+});
+
+
+
+const questions = [
         "How many miles do you drive on average per day? A)0-5 B)5-10 C)10-20 D)20+",
         "How long are your showers? A)0-5 B)5-15 C)15+",
         "How often do you order takeout? A)0-2 B)2-4 C)4+",
