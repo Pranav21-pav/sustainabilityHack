@@ -18,8 +18,8 @@ def process_data():
 
 if __name__ == '__main__':
     app.run()
-    
-____________________________________________________________________________________
+__________________________
+__________________________________________________________
 
 #Start writing if else statements from here
 ans1 = ''
@@ -28,6 +28,7 @@ ans3 = ''
 ans4 = ''
 ans5 = ''
 #question 1
+
 
 total_score = 0
 if ans1 == 'A':
@@ -38,4 +39,6 @@ elif ans1 == 'C':
     total_score += 2
 elif ans1 == 'D':
     total_score += 1
+
+#hi
     
