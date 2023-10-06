@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const toggleButton = document.getElementById("toggle-button");
     const loginContainer = document.getElementById("login-container");
     const signupContainer = document.getElementById("signup-container");
-    const questionContainer = document.getElementById("question-container");
 
     toggleButton.addEventListener("click", function() {
         if (loginContainer.style.display === "none") {
@@ -15,19 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
             toggleButton.textContent = "Login"; // Change button text to "Login"
         }
     });
+});
 
-    const loginButton = document.getElementById("login-button");
-    const signupButton = document.getElementById("signup-button");
-
-    loginButton.addEventListener("click", function() {
-        loginContainer.style.display = "none";
-        questionContainer.style.display = "block";
-    });
-
-    signupButton.addEventListener("click", function() {
-        signupContainer.style.display = "none";
-        questionContainer.style.display = "block";
-    });
 
     const questions = [
         "How many miles do you drive on average per day? A)0-5 B)5-10 C)10-20 D)20+",
