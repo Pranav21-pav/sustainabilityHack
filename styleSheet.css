@@ -11,6 +11,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: rgba(240, 240, 240, 0.9); /* Add a tint with rgba color */
+    border-radius: 10px; /* Rounded corners for the container */
+    padding: 20px; /* Increase padding for spacing */
 }
 
 .intro-container {
@@ -19,19 +22,20 @@ body {
 }
 
 h1 {
-    font-size: 32px; /* Increase the font size for the title */
+    font-size: 36px; /* Slightly larger font size for the title */
     color: #333;
+    margin-bottom: 20px; /* Increase the bottom margin */
 }
 
 button {
     background-color: #007BFF;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px; /* Slightly larger padding for buttons */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px; /* Increase the top margin to separate from the title */
+    font-size: 18px; /* Slightly larger font size for buttons */
+    margin-top: 20px;
     transition: background-color 0.3s;
 }
 
@@ -44,13 +48,14 @@ button:hover {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 350px; /* Slightly wider form container */
     margin: 10px;
 }
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 24px; /* Slightly larger font size for headings */
 }
 
 form {
@@ -59,26 +64,29 @@ form {
 }
 
 label {
-    margin-top: 10px;
+    margin-top: 15px; /* Slightly larger top margin for labels */
     font-weight: bold;
+    font-size: 18px; /* Slightly larger font size for labels */
 }
 
 input[type="text"],
 input[type="password"] {
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 12px;
+    margin-bottom: 15px; /* Slightly larger margin bottom for inputs */
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 5px; /* Slightly larger border radius */
+    font-size: 16px; /* Slightly smaller font size for inputs */
 }
 
 button[type="submit"] {
     background-color: #007BFF;
     color: #fff;
     border: none;
-    padding: 10px;
-    border-radius: 3px;
+    padding: 12px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 18px; /* Slightly larger font size for submit button */
 }
 
 button[type="submit"]:hover {
