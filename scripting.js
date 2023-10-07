@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (loginContainer.style.display === "none") {
             loginContainer.style.display = "block";
             signupPage.style.display = "none";
-            toggleButton.textContent = "Sign Up"; // Change button text to "Sign Up"
+            toggleButton.textContent = "Login"; // Change button text to "Login"
         } else {
             loginContainer.style.display = "none";
             signupPage.style.display = "block";
-            toggleButton.textContent = "Login"; // Change button text to "Login"
+            toggleButton.textContent = "Sign Up"; // Change button text to "Sign Up"
         }
     });
 });
