@@ -14,8 +14,20 @@ document.addEventListener("DOMContentLoaded", function() {
             toggleButton.textContent = "Login"; // Change button text to "Login"
         }
     });
-});
 
+    const loginForm = document.getElementById("login-form");
+
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Add your authentication logic here
+        // You can check the username and password and proceed accordingly
+
+        // For this example, let's assume the login is successful
+        // Redirect to the page with questions
+        window.location.href = "questions.html"; // Change the URL to the correct path
+    });
+});
 
 
 const questions = [
