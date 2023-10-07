@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: rgba(94, 131, 161, 1); /* Set the background color to (94,131,161) */
+    background-color: rgba(248, 67, 7, 1); /* Set the background color to (94,131,161) */
     margin: 0;
     padding: 0;
 }
@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgba(94, 131, 161, 1); /* Add a tint with rgba color */
+    background-color: rgba(248, 67, 7, 1); /* Add a tint with rgba color */
     border-radius: 10px; /* Rounded corners for the container */
     padding: 20px; /* Increase padding for spacing */
 }
