@@ -1,9 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #5e83a1; /* Change the background color */
+    background-color: rgb(94, 131, 161); /* Set the background color to (94,131,161) */
     margin: 0;
     padding: 0;
 }
+
+/* ... (rest of your CSS code remains unchanged) */
 
 .container {
     display: flex;
