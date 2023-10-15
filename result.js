@@ -10,6 +10,7 @@ fs.readFile('userResponses.json', 'utf8', (err, data) => {
 
         // Initialize an array to store scores for each question
         const questionScores = [0, 0, 0, 0, 0]; // One score for each question
+        let totalScore = 0; // Initialize a variable to store the total score
 
         // Define a function to convert user responses to scores (A:1, B:2, C:3, D:4, E:5)
         function convertResponseToScore(response) {
@@ -32,7 +33,7 @@ fs.readFile('userResponses.json', 'utf8', (err, data) => {
         // Process each user response
         userResponses.forEach((response) => {
             const userResponse = response.response;
-            
+
             // Process each question separately
             for (let i = 0; i < questionScores.length; i++) {
                 const score = convertResponseToScore(userResponse[i]);
@@ -40,9 +41,11 @@ fs.readFile('userResponses.json', 'utf8', (err, data) => {
             }
         });
 
-        // Now you have the total scores for each question in the questionScores array
-        questionScores.forEach((score, index) => {
-            console.log(`Question ${index + 1} Score: ${score}`);
-        });
+        // Calculate the total score
+        totalScore = questionScores.reduce((total, score) => total + score, 0);
+
+        // Display the total score in the "score" element
+        const scoreElement = document.getElementById("score");
+        scoreElement.textContent = `Your score is: ${totalScore}`;
     }
 });
