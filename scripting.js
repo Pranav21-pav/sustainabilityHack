@@ -26,7 +26,17 @@ function displayQuestion() {
         questionContainer.style.display = "none";
         calculateAndDisplayResult();
     }
+    
+    // Check if questions are displayed, then hide the result elements
+    if (currentQuestionIndex < questions.length) {
+        scoreElement.style.display = "none";
+        document.getElementById("advice").style.display = "none";
+    } else {
+        scoreElement.style.display = "block";
+        document.getElementById("advice").style.display = "block";
+    }
 }
+
 submitButton.addEventListener("click", function () {
     const userResponse = userResponseElement.value;
     const answer = convertResponseToNumber(userResponse);
