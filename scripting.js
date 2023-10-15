@@ -114,8 +114,12 @@ function calculateAndDisplayResult() {
         adviceElement.textContent = message;
 
         resultContainer.style.display = "block";
+
+        // Navigate to the "results.html" page
+        window.location.href = "results.html";
     }
 }
+
 
 
 displayQuestion();
