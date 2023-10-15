@@ -93,7 +93,8 @@ h1 {
 }
 
 /* These styles are retained from the second HTML code block */
-#result-container {
-    display: none; /* Hide the result container by default */
-    color: #fff; /* Text color for result container */
+/*#result-container {
+    display: none; 
+    color: #fff; 
 }
+*/
