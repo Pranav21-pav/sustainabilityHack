@@ -106,13 +106,12 @@ function calculateAndDisplayResult() {
         }
 
         // Set the total score and advice text based on the score
-        scoreElement.textContent = `Your score is: ${sum}`;
         const adviceElement = document.getElementById("advice");
         adviceElement.textContent = message;
 
         resultContainer.style.display = "block";
 
-        // Navigate to the "results.html" page
+    
         window.location.href = "results.html";
     }
 }
@@ -120,4 +119,4 @@ function calculateAndDisplayResult() {
 
 
 displayQuestion();
-
+}
