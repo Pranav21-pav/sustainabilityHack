@@ -6,26 +6,6 @@ const questions = [
     "How do you get your home energy? A) Solar Panels B) Green Electricity Plan C) Power Grid"
 ];
 
-// Event listener for the submit button
-submitButton.addEventListener("click", function () {
-    processUserResponse(); // Function to process user response
-    currentQuestionIndex++; // Move to the next question
-    displayQuestion(); // Display the next question
-});
-
-// Event listener for the Enter key press
-userResponseElement.addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-        processUserResponse(); // Function to process user response
-        currentQuestionIndex++; // Move to the next question
-        displayQuestion(); // Display the next question
-    }
-});
-
-function processUserResponse() {
-    const userResponse = userResponseElement.value;
-    // Process userResponse, e.g., save it or perform calculations
-}
 
 const answers = [];
 let currentQuestionIndex = 0;
@@ -58,6 +38,33 @@ submitButton.addEventListener("click", function () {
         alert("Invalid response. Please enter A, B, C, D, or E");
     }
 });
+
+// Event listener for the submit button
+submitButton.addEventListener("click", function () {
+    submitResponse();
+});
+
+// Event listener for the Enter key press in the input field
+userResponseElement.addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+        submitResponse();
+    }
+});
+
+function submitResponse() {
+    const userResponse = userResponseElement.value;
+    const answer = convertResponseToNumber(userResponse);
+
+    if (answer !== null) {
+        answers.push(answer);
+        currentQuestionIndex++;
+        displayQuestion();
+    } else {
+        alert("Invalid response. Please enter A, B, C, D, or E");
+    }
+}
+
+// 
 
 function convertResponseToNumber(response) {
     response = response.toUpperCase();
