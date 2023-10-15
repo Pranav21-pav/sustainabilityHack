@@ -84,18 +84,31 @@ userResponseElement.addEventListener("keyup", function (event) {
     }
 });
 
-// Function to save user responses to "score.json"
+// Function to save user responses to "userResponses.json" with timestamps
 function saveUserResponsesToJSON() {
-    const userResponsesJSON = JSON.stringify(userResponses);
+    const timestamp = new Date().toISOString();
+    const userResponseWithTimestamp = { timestamp, response: userResponses };
+    
+    // Read the existing JSON file (if any)
+    let existingData = [];
+    try {
+        existingData = JSON.parse(fs.readFileSync('userResponses.json', 'utf8'));
+    } catch (error) {
+        // If the file doesn't exist or is empty, it will catch the error.
+    }
 
-    fs.writeFileSync('score.json', userResponsesJSON, 'utf8', (err) => {
+    // Add the new response to the existing data
+    existingData.push(userResponseWithTimestamp);
+
+    fs.writeFileSync('userResponses.json', JSON.stringify(existingData, null, 2), 'utf8', (err) => {
         if (err) {
-            console.error('Error writing to score.json:', err);
+            console.error('Error writing to userResponses.json:', err);
         } else {
-            console.log('User responses saved to score.json');
+            console.log('User responses saved to userResponses.json');
         }
     });
 }
+
 
 
 displayQuestion();
