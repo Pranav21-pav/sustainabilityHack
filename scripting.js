@@ -119,4 +119,3 @@ function calculateAndDisplayResult() {
 
 
 displayQuestion();
-}
