@@ -1,3 +1,4 @@
+const fs = require('fs');
 const questions = [
     "How many miles do you drive on average per day? A)0-5 B)5-10 C)10-20 D)20+",
     "How long are your showers? A)0-5 B)5-15 C)15+",
@@ -16,6 +17,17 @@ const submitButton = document.getElementById("submit-button");
 const scoreElement = document.getElementById("score");
 
 let submitCount = 0; // Initialize a variable to count the number of times the submit button is pressed
+
+// Define a function to convert user responses to scores (A:1, B:2, C:3, D:4, E:5)
+function convertResponseToNumber(response) {
+    response = response.toUpperCase();
+    if (response === 'A') return 1;
+    if (response === 'B') return 2;
+    if (response === 'C') return 3;
+    if (response === 'D') return 4;
+    if (response === 'E') return 5;
+    return null;
+}
 
 function displayQuestion() {
     if (currentQuestionIndex < questions.length) {
@@ -67,6 +79,37 @@ userResponseElement.addEventListener("keyup", function (event) {
         } else {
             alert("Invalid response. Please enter A, B, C, D, or E");
         }
+    }
+});
+
+// Read the user responses, calculate the total score, and update the HTML element
+fs.readFile('userResponses.json', 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading userResponses.json:', err);
+    } else {
+        // Parse the JSON data into an array of responses
+        const userResponses = JSON.parse(data);
+
+        // Initialize an array to store scores for each question
+        const questionScores = [0, 0, 0, 0, 0]; // One score for each question
+        let totalScore = 0; // Initialize a variable to store the total score
+
+        // Process each user response
+        userResponses.forEach((response) => {
+            const userResponse = response.response;
+
+            // Process each question separately
+            for (let i = 0; i < questionScores.length; i++) {
+                const score = convertResponseToNumber(userResponse[i]);
+                questionScores[i] += score;
+            }
+        });
+
+        // Calculate the total score
+        totalScore = questionScores.reduce((total, score) => total + score, 0);
+
+        // Display the total score in the "score" element
+        scoreElement.textContent = `Your score is: ${totalScore}`;
     }
 });
 
