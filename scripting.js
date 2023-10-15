@@ -70,9 +70,6 @@ function submitResponse() {
         answers.push(answer);
         currentQuestionIndex++;
         displayQuestion();
-    } else {
-        alert("Invalid response. Please enter A, B, C, D, or E");
-    }
 }
 
 // 
