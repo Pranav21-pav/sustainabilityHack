@@ -6,12 +6,35 @@ const questions = [
     "How do you get your home energy? A) Solar Panels B) Green Electricity Plan C) Power Grid"
 ];
 
+// Event listener for the submit button
+submitButton.addEventListener("click", function () {
+    processUserResponse(); // Function to process user response
+    currentQuestionIndex++; // Move to the next question
+    displayQuestion(); // Display the next question
+});
+
+// Event listener for the Enter key press
+userResponseElement.addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+        processUserResponse(); // Function to process user response
+        currentQuestionIndex++; // Move to the next question
+        displayQuestion(); // Display the next question
+    }
+});
+
+function processUserResponse() {
+    const userResponse = userResponseElement.value;
+    // Process userResponse, e.g., save it or perform calculations
+}
+
 const answers = [];
 let currentQuestionIndex = 0;
 const questionContainer = document.getElementById("question-container");
+const resultContainer = document.getElementById("result-container");
 const questionElement = document.getElementById("question");
 const userResponseElement = document.getElementById("user-response");
 const submitButton = document.getElementById("submit-button");
+const scoreElement = document.getElementById("score");
 
 function displayQuestion() {
     if (currentQuestionIndex < questions.length) {
@@ -48,10 +71,8 @@ function convertResponseToNumber(response) {
 
 function calculateAndDisplayResult() {
     const sum = answers.reduce((total, num) => total + num, 0);
-    const resultText = `Your score is: ${sum}`;
-    
-    // Redirect to the result page and pass the score as a URL parameter
-    window.location.href = `result.html?score=${sum}`;
+    scoreElement.textContent = `Your score is: ${sum}`;
+    resultContainer.style.display = "block";
 }
 
 displayQuestion();
