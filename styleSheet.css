@@ -1,7 +1,7 @@
 #result-container {
-    display: none; /* Hide the result container by default */
     color: #fff; /* Text color for result container */
 }
+
 
 body {
     display: flex;
