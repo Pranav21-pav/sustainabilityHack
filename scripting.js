@@ -1,4 +1,12 @@
 const fs = require('fs');
+
+const questions = [
+    "How many miles do you drive on average per day? A)0-5 B)5-10 C)10-20 D)20+",
+    "How long are your showers? A)0-5 B)5-15 C)15+",
+    "How often do you order takeout? A)0-2 B)2-4 C)4+",
+    "What type of car do you drive? A) No car B) Electric C) Hybrid D) Gas",
+    "How do you get your home energy? A) Solar Panels B) Green Electricity Plan C) Power Grid"
+];
 fs.readFile('userResponses.json', 'utf8', (err, data) => {
     if (err) {
         console.error('Error reading userResponses.json:', err);
@@ -27,14 +35,6 @@ fs.readFile('userResponses.json', 'utf8', (err, data) => {
                     return 0; // Handle invalid responses as needed
             }
         }
-const questions = [
-    "How many miles do you drive on average per day? A)0-5 B)5-10 C)10-20 D)20+",
-    "How long are your showers? A)0-5 B)5-15 C)15+",
-    "How often do you order takeout? A)0-2 B)2-4 C)4+",
-    "What type of car do you drive? A) No car B) Electric C) Hybrid D) Gas",
-    "How do you get your home energy? A) Solar Panels B) Green Electricity Plan C) Power Grid"
-];
-
 const answers = [];
 // Process each user response
 userResponses.forEach((response) => {
