@@ -6,7 +6,6 @@ const questions = [
     "How do you get your home energy? A) Solar Panels B) Green Electricity Plan C) Power Grid"
 ];
 
-
 const answers = [];
 let currentQuestionIndex = 0;
 const questionContainer = document.getElementById("question-container");
@@ -16,6 +15,7 @@ const userResponseElement = document.getElementById("user-response");
 const submitButton = document.getElementById("submit-button");
 const scoreElement = document.getElementById("score");
 
+let submitCount = 0; // Initialize a variable to count the number of times the submit button is pressed
 
 function displayQuestion() {
     if (currentQuestionIndex < questions.length) {
@@ -24,7 +24,9 @@ function displayQuestion() {
         resultContainer.style.display = "none"; // Hide the result container when showing a new question
     } else {
         questionContainer.style.display = "none";
-        calculateAndDisplayResult();
+        if (submitCount === 4) {
+            calculateAndDisplayResult();
+        }
     }
    
     // Check if questions are displayed, then hide the result elements
@@ -45,37 +47,28 @@ submitButton.addEventListener("click", function () {
         answers.push(answer);
         currentQuestionIndex++;
         displayQuestion();
+        submitCount++;
     } else {
         alert("Invalid response. Please enter A, B, C, D, or E");
     }
-});
-
-// Event listener for the submit button
-submitButton.addEventListener("click", function () {
-    submitResponse();
 });
 
 // Event listener for the Enter key press in the input field
 userResponseElement.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
-        submitResponse();
+        const userResponse = userResponseElement.value;
+        const answer = convertResponseToNumber(userResponse);
+       
+        if (answer !== null) {
+            answers.push(answer);
+            currentQuestionIndex++;
+            displayQuestion();
+            submitCount++;
+        } else {
+            alert("Invalid response. Please enter A, B, C, D, or E");
+        }
     }
 });
-
-function submitResponse() {
-    const userResponse = userResponseElement.value;
-    const answer = convertResponseToNumber(userResponse);
-
-    if (answer !== null) {
-        answers.push(answer);
-        currentQuestionIndex++;
-        displayQuestion();
-    } else {
-        alert("Invalid response. Please enter A, B, C, D, or E");
-    }
-}
-
-//
 
 function convertResponseToNumber(response) {
     response = response.toUpperCase();
@@ -119,7 +112,5 @@ function calculateAndDisplayResult() {
         window.location.href = "results.html";
     }
 }
-
-
 
 displayQuestion();
