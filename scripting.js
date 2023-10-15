@@ -26,7 +26,7 @@ function displayQuestion() {
     if (currentQuestionIndex < questions.length) {
         questionElement.textContent = questions[currentQuestionIndex];
         userResponseElement.value = "";
-        resultContainer.style display = "none"; // Hide the result container when showing a new question
+        resultContainer.style.display = "none"; // Hide the result container when showing a new question
     } else {
         questionContainer.style.display = "none";
         if (submitCount === 4) {
@@ -56,7 +56,7 @@ submitButton.addEventListener("click", function () {
         displayQuestion();
         submitCount++;
 
-        // Write the user responses to "score.json"
+        // Write the user responses to "userResponses.json"
         saveUserResponsesToJSON();
     } else {
         alert("Invalid response. Please enter A, B, C, D, or E");
@@ -76,7 +76,7 @@ userResponseElement.addEventListener("keyup", function (event) {
             displayQuestion();
             submitCount++;
 
-            // Write the user responses to "score.json"
+            // Write the user responses to "userResponses.json"
             saveUserResponsesToJSON();
         } else {
             alert("Invalid response. Please enter A, B, C, D, or E");
@@ -108,7 +108,5 @@ function saveUserResponsesToJSON() {
         }
     });
 }
-
-
 
 displayQuestion();
