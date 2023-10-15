@@ -38,6 +38,29 @@ const questions = [
     // Initialize the first question
     displayQuestion();
 
+
+// Event listener for the submit button
+submitButton.addEventListener("click", function () {
+    processUserResponse(); // Function to process user response
+    currentQuestionIndex++; // Move to the next question
+    displayQuestion(); // Display the next question
+});
+
+// Event listener for the Enter key press
+userResponseElement.addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+        processUserResponse(); // Function to process user response
+        currentQuestionIndex++; // Move to the next question
+        displayQuestion(); // Display the next question
+    }
+});
+
+function processUserResponse() {
+    const userResponse = userResponseElement.value;
+    // Process userResponse, e.g., save it or perform calculations
+}
+
+
 /*
 
 const questions = [
