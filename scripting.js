@@ -16,16 +16,17 @@ const userResponseElement = document.getElementById("user-response");
 const submitButton = document.getElementById("submit-button");
 const scoreElement = document.getElementById("score");
 
+
 function displayQuestion() {
     if (currentQuestionIndex < questions.length) {
         questionElement.textContent = questions[currentQuestionIndex];
         userResponseElement.value = "";
+        resultContainer.style.display = "none"; // Hide the result container when showing a new question
     } else {
         questionContainer.style.display = "none";
         calculateAndDisplayResult();
     }
 }
-
 submitButton.addEventListener("click", function () {
     const userResponse = userResponseElement.value;
     const answer = convertResponseToNumber(userResponse);
@@ -77,7 +78,7 @@ function convertResponseToNumber(response) {
 }
 
 function calculateAndDisplayResult() {
-    if (currentQuestionIndex === questions.length) {
+    if (currentQuestionIndex === 4) { // Check if it's the 5th question (index 4)
         const sum = answers.reduce((total, num) => total + num, 0);
         scoreElement.textContent = `Your score is: ${sum}`;
 
