@@ -96,8 +96,11 @@ function calculateAndDisplayResult() {
         message = "Invalid score range.";
     }
 
+    // Set the advice text based on the score
+    const adviceElement = document.getElementById("advice");
+    adviceElement.textContent = message;
+
     resultContainer.style.display = "block";
-    resultContainer.innerHTML = `<h2>Your score is:</h2><p>${sum}</p><p>${message}</p>`;
 }
 
 displayQuestion();
