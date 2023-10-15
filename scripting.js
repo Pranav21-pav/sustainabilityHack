@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const questions = [
     "How many miles do you drive on average per day? A)0-5 B)5-10 C)10-20 D)20+",
     "How long are your showers? A)0-5 B)5-15 C)15+",
@@ -7,45 +5,8 @@ const questions = [
     "What type of car do you drive? A) No car B) Electric C) Hybrid D) Gas",
     "How do you get your home energy? A) Solar Panels B) Green Electricity Plan C) Power Grid"
 ];
-fs.readFile('userResponses.json', 'utf8', (err, data) => {
-    if (err) {
-        console.error('Error reading userResponses.json:', err);
-    } else {
-        // Parse the JSON data into an array of responses
-        const userResponses = JSON.parse(data);
 
-        // Initialize an array to store scores for each question
-        const questionScores = [0, 0, 0, 0, 0]; // One score for each question
-        let totalScore = 0; // Initialize a variable to store the total score
-
-        // Define a function to convert user responses to scores (A:1, B:2, C:3, D:4, E:5)
-        function convertResponseToScore(response) {
-            switch (response) {
-                case 'A':
-                    return 1;
-                case 'B':
-                    return 2;
-                case 'C':
-                    return 3;
-                case 'D':
-                    return 4;
-                case 'E':
-                    return 5;
-                default:
-                    return 0; // Handle invalid responses as needed
-            }
-        }
 const answers = [];
-// Process each user response
-userResponses.forEach((response) => {
-    const userResponse = response.response;
-
-    // Process each question separately
-    for (let i = 0; i < questionScores.length; i++) {
-        const score = convertResponseToScore(userResponse[i]);
-        questionScores[i] += score;
-    }
-});
 let currentQuestionIndex = 0;
 const questionContainer = document.getElementById("question-container");
 const resultContainer = document.getElementById("result-container");
@@ -111,4 +72,4 @@ userResponseElement.addEventListener("keyup", function (event) {
 
 
 
-}
+displayQuestion();
