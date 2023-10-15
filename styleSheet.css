@@ -1,152 +1,43 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: rgba(8, 158, 247, 1); /* Set the background color to (94,131,161) */
+/* Reset default margin and padding */
+body, h1, div {
     margin: 0;
     padding: 0;
 }
 
-/* ... (rest of your CSS code remains unchanged) */
-
-.container {
+/* Center align the content */
+body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: rgba(8, 158, 247, 1); /* Add a tint with rgba color */
-    border-radius: 10px; /* Rounded corners for the container */
-    padding: 20px; /* Increase padding for spacing */
+    min-height: 100vh;
+    background-color: #00bcd4; /* Cyanish background color */
 }
 
-.intro-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 36px; /* Slightly larger font size for the title */
-    color: #333;
-    margin-bottom: 20px; /* Increase the bottom margin */
-}
-
-button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 12px 24px; /* Slightly larger padding for buttons */
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px; /* Slightly larger font size for buttons */
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.form-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    width: 350px; /* Slightly wider form container */
-    margin: 10px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px; /* Slightly larger font size for headings */
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-top: 15px; /* Slightly larger top margin for labels */
-    font-weight: bold;
-    font-size: 18px; /* Slightly larger font size for labels */
-}
-
-input[type="text"],
-input[type="password"] {
-    padding: 12px;
-    margin-bottom: 15px; /* Slightly larger margin bottom for inputs */
-    border: 1px solid #ccc;
-    border-radius: 5px; /* Slightly larger border radius */
-    font-size: 16px; /* Slightly smaller font size for inputs */
-}
-
-button[type="submit"] {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 18px; /* Slightly larger font size for submit button */
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-
-
-/* Basic styling for the calculator container */
+/* Style for the container with a cyanish background */
 #question-container {
-    text-align: center;
-    margin: 20px auto;
+    background-color: #00bcd4;
     padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    text-align: center;
     max-width: 400px;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for a better visual effect */
 }
 
-/* Styling for the calculator title */
+/* Style for the h1 element */
 h1 {
-    font-size: 24px;
-    color: #333;
+    color: #fff; /* White text color */
 }
 
-/* Styling for the question text */
-#question p {
-    font-size: 18px;
-    margin-bottom: 10px;
+/* Style for the input and button elements */
+#user-response, #submit-button {
+    margin: 10px 0;
 }
 
-/* Styling for the user response input field */
-#user-response {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Styling for the submit button */
-#submit-button {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-/* Styling for the result container */
+/* Style for the result container (if needed) */
 #result-container {
+    background-color: #fff; /* White background for the result container */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
     margin-top: 20px;
-    font-size: 18px;
-    color: #007BFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for a better visual effect */
 }
-
-/* Additional styles can be added as needed for your specific design */
