@@ -20,16 +20,11 @@ function displayQuestion() {
     if (currentQuestionIndex < questions.length) {
         questionElement.textContent = questions[currentQuestionIndex];
         userResponseElement.value = "";
-
-        // Hide score and advice elements
-        document.getElementById("score-heading").style.display = "none";
-        document.getElementById("score").style.display = "none";
-        document.getElementById("advice-heading").style.display = "none";
-        document.getElementById("advice").style.display = "none";
     } else {
         questionContainer.style.display = "none";
         calculateAndDisplayResult();
     }
+}
 
 submitButton.addEventListener("click", function () {
     const userResponse = userResponseElement.value;
@@ -100,12 +95,6 @@ function calculateAndDisplayResult() {
     } else {
         message = "Invalid score range.";
     }
-
-    // Show score and advice elements
-    document.getElementById("score-heading").style.display = "block";
-    document.getElementById("score").style.display = "block";
-    document.getElementById("advice-heading").style.display = "block";
-    document.getElementById("advice").style.display = "block";
 
     // Set the total score and advice text based on the score
     scoreElement.textContent = `Your score is: ${sum}`;
