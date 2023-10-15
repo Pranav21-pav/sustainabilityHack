@@ -79,7 +79,26 @@ function convertResponseToNumber(response) {
 function calculateAndDisplayResult() {
     const sum = answers.reduce((total, num) => total + num, 0);
     scoreElement.textContent = `Your score is: ${sum}`;
+
+    let message;
+
+    if (sum >= 1 && sum <= 5) {
+        message = "You have a lot to work on. Try choosing more environmentally friendly options.";
+    } else if (sum >= 6 && sum <= 10) {
+        message = "You aren't doing bad. Try to step up your environmental friendliness.";
+    } else if (sum >= 11 && sum <= 15) {
+        message = "You're doing pretty good. Try to be very mindful to be one of the most environmentally friendly people.";
+    } else if (sum >= 16 && sum <= 20) {
+        message = "You are super friendly. Try to pay attention to the minute details.";
+    } else if (sum >= 21 && sum <= 25) {
+        message = "You're the most environmentally friendly person to exist.";
+    } else {
+        message = "Invalid score range.";
+    }
+
     resultContainer.style.display = "block";
+    resultContainer.innerHTML = `<h2>Your score is:</h2><p>${sum}</p><p>${message}</p>`;
 }
 
 displayQuestion();
+
