@@ -26,7 +26,7 @@ function displayQuestion() {
         questionContainer.style.display = "none";
         calculateAndDisplayResult();
     }
-    
+   
     // Check if questions are displayed, then hide the result elements
     if (currentQuestionIndex < questions.length) {
         scoreElement.style.display = "none";
@@ -40,7 +40,7 @@ function displayQuestion() {
 submitButton.addEventListener("click", function () {
     const userResponse = userResponseElement.value;
     const answer = convertResponseToNumber(userResponse);
-    
+   
     if (answer !== null) {
         answers.push(answer);
         currentQuestionIndex++;
@@ -75,7 +75,7 @@ function submitResponse() {
     }
 }
 
-// 
+//
 
 function convertResponseToNumber(response) {
     response = response.toUpperCase();
@@ -123,4 +123,3 @@ function calculateAndDisplayResult() {
 
 
 displayQuestion();
-
